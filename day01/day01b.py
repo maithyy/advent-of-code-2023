@@ -1,4 +1,6 @@
-def getFirstValue(line, numbers):
+numbers = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight" : 8, "nine": 9}
+
+def getFirstValue(line):
     for i in range(len(line)):
         if line[i].isdigit():
             return str(line[i])
@@ -6,7 +8,7 @@ def getFirstValue(line, numbers):
             if line[i:].startswith(number):
                 return str(numbers[number])
             
-def getLastValue(line, numbers):
+def getLastValue(line):
     for i in range(len(line)-1, -1, -1):
         if line[i].isdigit():
             return str(line[i])
@@ -15,12 +17,11 @@ def getLastValue(line, numbers):
                 return str(numbers[number])
 
 def main():
-    numbers = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight" : 8, "nine": 9}
     result = 0
-    with open('example.txt') as f:
+    with open('input.txt') as f:
         for line in f:
-            firstValue = getFirstValue(line, numbers)
-            lastValue = getLastValue(line, numbers)
+            firstValue = getFirstValue(line)
+            lastValue = getLastValue(line)
             result += int(firstValue + lastValue)
 
 
