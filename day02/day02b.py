@@ -5,10 +5,7 @@ def get_fewest(cube_sets):
         for pair in s:
             amt, color = pair.split()
             amt = int(amt)
-            if color in result_dict:
-                result_dict[color] = max(result_dict[color], amt)
-            else:
-                result_dict[color] = amt
+            result_dict[color] = max(result_dict.get(color, 0), amt)
     return result_dict
 
 
