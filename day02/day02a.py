@@ -1,3 +1,4 @@
+possible = {"red": 12, "green": 13, "blue": 14}
 def possible_game(cube_sets):
     for s in cube_sets:
         s = s.split(",")
@@ -8,8 +9,6 @@ def possible_game(cube_sets):
                 return False
     return True
 
-
-possible = {"red": 12, "green": 13, "blue": 14}
 def main():
     result = 0
     with open('input.txt') as f:

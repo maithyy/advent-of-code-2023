@@ -12,7 +12,6 @@ def get_fewest(cube_sets):
     return result_dict
 
 
-possible = {"red": 12, "green": 13, "blue": 14}
 def main():
     result = 0
     with open('input.txt') as f:
